@@ -8,9 +8,9 @@ public class Euler {
 		// Add all the natural numbers below one thousand that are multiples of
 		// 3 or 5.
 		int sum = 0;
-		for (int i = 0; i < 1000; i++) {
-			if (i % 3 == 0 || i % 5 == 0)
-				sum += i;
+		for (int natural = 0; natural < 1000; natural++) {
+			if (natural % 3 == 0 || natural % 5 == 0)
+				sum += natural;
 		}
 		return "" + sum;
 	}
@@ -18,36 +18,37 @@ public class Euler {
 	public String problem2() {
 		// By considering the terms in the Fibonacci sequence whose values do
 		// not exceed four million, find the sum of the even-valued terms.
-		int f1 = 1;
-		int f2 = 1;
+		int current_fibonnaci = 1;
+		int next_fibonnaci = 1;
 		int sum = 0;
-		while (f2 <= 4000000) {
-			if (f2 % 2 == 0)
-				sum += f2;
-			int temp = f2;
-			f2 = f1 + f2;
-			f1 = temp;
+		while (next_fibonnaci <= 4000000) {
+			if (next_fibonnaci % 2 == 0)
+				sum += next_fibonnaci;
+			int temp = next_fibonnaci;
+			next_fibonnaci = current_fibonnaci + next_fibonnaci;
+			current_fibonnaci = temp;
 		}
 		return "" + sum;
 	}
 
 	public String problem10() {
 		// Find the sum of all the primes below two million
-		long[] p = new long[148932];
-		long[] psq = new long[148932];
-		int z = 0;
+		long[] primes = new long[148932];
+		long[] squares_of_primes = new long[148932];
+		int num_primes = 0;
 		long sum = 2;
-		for (long i = 3; i < 2000000; i += 2) {
-			boolean s = true;
-			for (int pr = 0; pr < z && s && psq[pr] <= i; pr++) {
-				long d = p[pr];
-				if (i % d == 0)
-					s = false;
+		for (long natural = 3; natural < 2000000; natural += 2) {
+			boolean is_prime = true;
+			for (int pr = 0; pr < num_primes && is_prime
+					&& squares_of_primes[pr] <= natural; pr++) {
+				long d = primes[pr];
+				if (natural % d == 0)
+					is_prime = false;
 			}
-			if (s) {
-				p[z] = i;
-				psq[z++] = i * i;
-				sum += i;
+			if (is_prime) {
+				primes[num_primes] = natural;
+				squares_of_primes[num_primes++] = natural * natural;
+				sum += natural;
 			}
 		}
 		return "" + sum;
