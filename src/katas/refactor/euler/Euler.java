@@ -9,10 +9,14 @@ public class Euler {
 		// 3 or 5.
 		int sum = 0;
 		for (int natural = 0; natural < 1000; natural++) {
-			if (natural % 3 == 0 || natural % 5 == 0)
+			if (multipleOf(natural, 3) || multipleOf(natural, 5))
 				sum += natural;
 		}
 		return "" + sum;
+	}
+
+	private boolean multipleOf(long natural, long divisor) {
+		return natural % divisor == 0;
 	}
 
 	public String problem2() {
@@ -22,7 +26,7 @@ public class Euler {
 		int next_fibonnaci = 1;
 		int sum = 0;
 		while (next_fibonnaci <= 4000000) {
-			if (next_fibonnaci % 2 == 0)
+			if (multipleOf(next_fibonnaci, 2))
 				sum += next_fibonnaci;
 			int temp = next_fibonnaci;
 			next_fibonnaci = current_fibonnaci + next_fibonnaci;
@@ -41,8 +45,8 @@ public class Euler {
 			boolean is_prime = true;
 			for (int pr = 0; pr < num_primes && is_prime
 					&& squares_of_primes[pr] <= natural; pr++) {
-				long d = primes[pr];
-				if (natural % d == 0)
+				long divisor = primes[pr];
+				if (multipleOf(natural, divisor))
 					is_prime = false;
 			}
 			if (is_prime) {
