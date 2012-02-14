@@ -48,18 +48,19 @@ public class Euler {
 	private String problem10() {
 		// Find the sum of all the primes below two million
 		long[] p = new long[148932];
+		long[] psq = new long[148932];
 		int z = 0;
 		long sum = 2;
 		for (long i = 3; i < 2000000; i += 2) {
 			boolean s = true;
-			long m = 1 + Math.round(Math.sqrt(i));
-			for (int pr = 0; pr < z && s && p[pr] < m; pr++) {
+			for (int pr = 0; pr < z && s && psq[pr] <= i; pr++) {
 				long d = p[pr];
 				if (i % d == 0)
 					s = false;
 			}
 			if (s) {
-				p[z++] = i;
+				p[z] = i;
+				psq[z++] = i * i;
 				sum += i;
 			}
 		}
