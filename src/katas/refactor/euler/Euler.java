@@ -28,7 +28,17 @@ public class Euler {
 	private String problem2() {
 		// By considering the terms in the Fibonacci sequence whose values do
 		// not exceed four million, find the sum of the even-valued terms.
-		return "4613732";
+		int f1 = 1;
+		int f2 = 1;
+		int sum = 0;
+		while (f2 <= 4000000) {
+			if (f2 % 2 == 0)
+				sum += f2;
+			int temp = f2;
+			f2 = f1 + f2;
+			f1 = temp;
+		}
+		return "" + sum;
 	}
 
 }
