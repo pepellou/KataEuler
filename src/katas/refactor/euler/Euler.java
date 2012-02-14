@@ -4,21 +4,7 @@ import java.util.Vector;
 
 public class Euler {
 
-	public String problem(int numProblem) {
-		switch (numProblem) {
-		case 1:
-			return problem1();
-		case 2:
-			return problem2();
-		case 10:
-			return problem10();
-		default:
-			break;
-		}
-		return null;
-	}
-
-	private String problem1() {
+	public String problem1() {
 		// Add all the natural numbers below one thousand that are multiples of
 		// 3 or 5.
 		int sum = 0;
@@ -29,7 +15,7 @@ public class Euler {
 		return "" + sum;
 	}
 
-	private String problem2() {
+	public String problem2() {
 		// By considering the terms in the Fibonacci sequence whose values do
 		// not exceed four million, find the sum of the even-valued terms.
 		int f1 = 1;
@@ -45,7 +31,7 @@ public class Euler {
 		return "" + sum;
 	}
 
-	private String problem10() {
+	public String problem10() {
 		// Find the sum of all the primes below two million
 		long[] p = new long[148932];
 		long[] psq = new long[148932];
