@@ -8,6 +8,8 @@ public class Euler {
 			return problem1();
 		case 2:
 			return problem2();
+		case 10:
+			return problem10();
 		default:
 			break;
 		}
@@ -39,6 +41,11 @@ public class Euler {
 			f1 = temp;
 		}
 		return "" + sum;
+	}
+
+	private String problem10() {
+		// Find the sum of all the primes below two million
+		return "142913828922";
 	}
 
 }

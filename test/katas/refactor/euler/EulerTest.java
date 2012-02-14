@@ -25,4 +25,9 @@ public class EulerTest {
 		assertEquals("4613732", euler.problem(2));
 	}
 
+	@Test
+	public void solvesProblem10() throws Exception {
+		assertEquals("142913828922", euler.problem(10));
+	}
+	
 }
