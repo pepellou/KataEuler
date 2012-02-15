@@ -4,9 +4,7 @@ public class Euler {
 
 	public String solveProblem(int numProblem) {
 		try {
-			return ((ProblemSolver) Class.forName(
-					"katas.refactor.euler.ProblemSolver" + numProblem).newInstance())
-					.solve();
+			return getSolverForProblem(numProblem).solve();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -15,6 +13,14 @@ public class Euler {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	private ProblemSolver getSolverForProblem(int numProblem)
+			throws InstantiationException, IllegalAccessException,
+			ClassNotFoundException {
+		return ((ProblemSolver) Class.forName(
+				"katas.refactor.euler.ProblemSolver" + numProblem)
+				.newInstance());
 	}
 
 }
