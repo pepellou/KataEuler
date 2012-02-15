@@ -4,11 +4,17 @@ public class ProblemSolver1 extends ProblemSolver {
 
 	@Override
 	public String solve() {
-		int naturals[] = new int[1000];
-		for (int natural = 0; natural < 1000; natural++) {
+		return ""
+				+ sumValuesVerifyingCondition(firstXNaturals(1000),
+						isMultipleOf3And5());
+	}
+
+	private int[] firstXNaturals(int x) {
+		int naturals[] = new int[x];
+		for (int natural = 0; natural < x; natural++) {
 			naturals[natural] = natural;
 		}
-		return "" + sumValuesVerifyingCondition(naturals, isMultipleOf3And5());
+		return naturals;
 	}
 
 	private Condition isMultipleOf3And5() {
