@@ -16,7 +16,7 @@ public class ProblemSolver2 extends ProblemSolver {
 				+ "find the sum of the even-valued terms.";
 	}
 
-	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
+	protected Long[] getFibonacciNumbersUpTo(final int topValue) {
 		return getFirstNumbers(1,
 				Incrementor.sumLastTwoValuesOr(1), Condition.lessThan(topValue));
 	}

@@ -8,23 +8,23 @@ public abstract class ProblemSolver {
 
 	public abstract String descriptionOfProblem();
 
-	protected int sumValues(Integer[] values, Condition conditionToVerify) {
-		int sum = 0;
-		for (int value : values) {
+	protected long sumValues(Long[] values, Condition conditionToVerify) {
+		long sum = 0;
+		for (Long value : values) {
 			if (conditionToVerify.verifiedBy(value))
 				sum += value;
 		}
 		return sum;
 	}
 
-	protected Integer[] getFirstNumbers(int firstValue,
-			Incrementor incrementor, Condition condition) {
-		Vector<Integer> numbers = new Vector<Integer>();
-		for (int number = firstValue; condition.verifiedBy(number); number = incrementor
+	protected Long[] getFirstNumbers(int firstValue, Incrementor incrementor,
+			Condition condition) {
+		Vector<Long> numbers = new Vector<Long>();
+		for (long number = firstValue; condition.verifiedBy(number); number = incrementor
 				.increment(number, numbers)) {
 			numbers.add(number);
 		}
-		return numbers.toArray(new Integer[0]);
+		return numbers.toArray(new Long[0]);
 	}
 
 }
