@@ -4,9 +4,7 @@ public class Euler {
 
 	public String solveProblem(int numProblem) {
 		ProblemSolver solver = getSolverForProblem(numProblem);
-		if (solver == null)
-			return null;
-		return solver.solve();
+		return (solver == null) ? null : solver.solve();
 	}
 
 	private ProblemSolver getSolverForProblem(int numProblem) {
