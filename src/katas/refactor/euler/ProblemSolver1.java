@@ -14,12 +14,18 @@ public class ProblemSolver1 extends ProblemSolver {
 				return multipleOf(number, 3) || multipleOf(number, 5);
 			}
 		};
+		int sum = sumValuesVerifyingCondition(naturals, conditionToVerify);
+		return "" + sum;
+	}
+
+	private int sumValuesVerifyingCondition(int[] values,
+			Condition conditionToVerify) {
 		int sum = 0;
-		for (int natural : naturals) {
+		for (int natural : values) {
 			if (conditionToVerify.verifiedBy(natural))
 				sum += natural;
 		}
-		return "" + sum;
+		return sum;
 	}
 
 	@Override
