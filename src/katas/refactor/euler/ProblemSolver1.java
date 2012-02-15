@@ -5,7 +5,7 @@ public class ProblemSolver1 extends ProblemSolver {
 	@Override
 	public String solve() {
 		return ""
-				+ sumValuesVerifyingCondition(
+				+ sumValues(
 						getFirstXNaturals(1000),
 						Condition.or(Condition.isMultipleOf(3),
 								Condition.isMultipleOf(5)));
@@ -17,7 +17,7 @@ public class ProblemSolver1 extends ProblemSolver {
 	}
 
 	protected Integer[] getFirstXNaturals(final int x) {
-		return getFirstNumbersVerifyingCondition(0, Incrementor.incrementBy(1),
+		return getFirstNumbers(0, Incrementor.incrementBy(1),
 				Condition.lessThan(x));
 	}
 

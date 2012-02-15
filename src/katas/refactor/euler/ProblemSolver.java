@@ -8,8 +8,7 @@ public abstract class ProblemSolver {
 
 	public abstract String descriptionOfProblem();
 
-	protected int sumValuesVerifyingCondition(Integer[] values,
-			Condition conditionToVerify) {
+	protected int sumValues(Integer[] values, Condition conditionToVerify) {
 		int sum = 0;
 		for (int value : values) {
 			if (conditionToVerify.verifiedBy(value))
@@ -18,7 +17,7 @@ public abstract class ProblemSolver {
 		return sum;
 	}
 
-	protected Integer[] getFirstNumbersVerifyingCondition(int firstValue,
+	protected Integer[] getFirstNumbers(int firstValue,
 			Incrementor incrementor, Condition condition) {
 		Vector<Integer> numbers = new Vector<Integer>();
 		for (int number = firstValue; condition.verifiedBy(number); number = incrementor

@@ -5,7 +5,7 @@ public class ProblemSolver2 extends ProblemSolver {
 	@Override
 	public String solve() {
 		return ""
-				+ sumValuesVerifyingCondition(getFibonacciNumbersUpTo(4000000),
+				+ sumValues(getFibonacciNumbersUpTo(4000000),
 						Condition.isMultipleOf(2));
 	}
 
@@ -17,7 +17,7 @@ public class ProblemSolver2 extends ProblemSolver {
 	}
 
 	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
-		return getFirstNumbersVerifyingCondition(1,
+		return getFirstNumbers(1,
 				Incrementor.sumLastTwoValuesOr(1), Condition.lessThan(topValue));
 	}
 
