@@ -5,7 +5,7 @@ public class ProblemSolver2 extends ProblemSolver {
 	@Override
 	public String solve() {
 		int topValue = 4000000;
-		int[] fibonacci = fibonacciUpTo(topValue);
+		int[] fibonacci = fibonaccisUpTo(topValue);
 		return "" + sumValuesVerifyingCondition(fibonacci, new Condition() {
 			@Override
 			public boolean verifiedBy(int number) {
@@ -14,11 +14,11 @@ public class ProblemSolver2 extends ProblemSolver {
 		});
 	}
 
-	private int[] fibonacciUpTo(int topValue) {
-		return firstXFibonacci(34);
+	private int[] fibonaccisUpTo(int topValue) {
+		return firstXFibonaccis(34);
 	}
 
-	private int[] firstXFibonacci(int x) {
+	private int[] firstXFibonaccis(int x) {
 		int[] fibonacci = new int[x];
 		fibonacci[0] = 1;
 		fibonacci[1] = 1;
