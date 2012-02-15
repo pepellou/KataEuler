@@ -23,22 +23,18 @@ public abstract class ProblemSolver {
 	}
 
 	protected Integer[] firstXNaturals(final int x) {
-		Condition condition = new Condition() {
-			@Override
-			public boolean verifiedBy(int number) {
-				return number < x;
-			}
-		};
-		int firstValue = 0;
-		Incrementor incrementor = new Incrementor() {
+		return firstNumbersMatchingCondition(0, new Incrementor() {
 			@Override
 			public int increment(int current_value,
 					Vector<Integer> previous_values) {
 				return current_value + 1;
 			}
-		};
-
-		return firstNumbersMatchingCondition(firstValue, incrementor, condition);
+		}, new Condition() {
+			@Override
+			public boolean verifiedBy(int number) {
+				return number < x;
+			}
+		});
 	}
 
 	private Integer[] firstNumbersMatchingCondition(int firstValue,
@@ -52,8 +48,7 @@ public abstract class ProblemSolver {
 	}
 
 	protected Integer[] fibonaccisUpTo(final int topValue) {
-		int firstValue = 1;
-		Incrementor incrementor = new Incrementor() {
+		return firstNumbersMatchingCondition(1, new Incrementor() {
 			@Override
 			public int increment(int current_value,
 					Vector<Integer> previous_values) {
@@ -62,15 +57,12 @@ public abstract class ProblemSolver {
 						+ previous_values.get(size - 2);
 
 			}
-		};
-		Condition condition = new Condition() {
+		}, new Condition() {
 			@Override
 			public boolean verifiedBy(int number) {
 				return number <= topValue;
 			}
-		};
-
-		return firstNumbersMatchingCondition(firstValue, incrementor, condition);
+		});
 	}
 
 }
