@@ -22,17 +22,7 @@ public abstract class ProblemSolver {
 		return sum;
 	}
 
-	protected Integer[] getFirstXNaturals(final int x) {
-		return getFirstNumbersVerifyingCondition(0, Incrementor.incrementBy(1),
-				Condition.lessThan(x));
-	}
-
-	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
-		return getFirstNumbersVerifyingCondition(1,
-				Incrementor.sumLastTwoValuesOr(1), Condition.lessThan(topValue));
-	}
-
-	private Integer[] getFirstNumbersVerifyingCondition(int firstValue,
+	protected Integer[] getFirstNumbersVerifyingCondition(int firstValue,
 			Incrementor incrementor, Condition condition) {
 		Vector<Integer> naturals = new Vector<Integer>();
 		for (int natural = firstValue; condition.verifiedBy(natural); natural = incrementor
