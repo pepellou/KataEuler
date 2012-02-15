@@ -8,12 +8,16 @@ public class ProblemSolver1 extends ProblemSolver {
 		for (int natural = 0; natural < 1000; natural++) {
 			naturals[natural] = natural;
 		}
-		return "" + sumValuesVerifyingCondition(naturals, new Condition() {
+		return "" + sumValuesVerifyingCondition(naturals, isMultipleOf3And5());
+	}
+
+	private Condition isMultipleOf3And5() {
+		return new Condition() {
 			@Override
 			public boolean verifiedBy(int number) {
 				return multipleOf(number, 3) || multipleOf(number, 5);
 			}
-		});
+		};
 	}
 
 	private int sumValuesVerifyingCondition(int[] values,
