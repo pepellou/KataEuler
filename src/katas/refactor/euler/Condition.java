@@ -27,10 +27,14 @@ public abstract class Condition {
 	}
 
 	public static Condition isMultipleOf2() {
+		return isMultipleOf(2);
+	}
+
+	public static Condition isMultipleOf(final int divisor) {
 		return new Condition() {
 			@Override
 			public boolean verifiedBy(int number) {
-				return multipleOf(number, 2);
+				return multipleOf(number, divisor);
 			}
 		};
 	}
