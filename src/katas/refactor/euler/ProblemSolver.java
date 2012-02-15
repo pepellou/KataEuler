@@ -10,4 +10,13 @@ public abstract class ProblemSolver {
 
 	public abstract String descriptionOfProblem();
 
+	protected int sumValuesVerifyingCondition(int[] values, Condition conditionToVerify) {
+		int sum = 0;
+		for (int value : values) {
+			if (conditionToVerify.verifiedBy(value))
+				sum += value;
+		}
+		return sum;
+	}
+
 }

@@ -20,16 +20,6 @@ public class ProblemSolver1 extends ProblemSolver {
 		};
 	}
 
-	private int sumValuesVerifyingCondition(int[] values,
-			Condition conditionToVerify) {
-		int sum = 0;
-		for (int value : values) {
-			if (conditionToVerify.verifiedBy(value))
-				sum += value;
-		}
-		return sum;
-	}
-
 	@Override
 	public String descriptionOfProblem() {
 		return "Add all the natural numbers below one thousand that are multiples of 3 or 5.";
