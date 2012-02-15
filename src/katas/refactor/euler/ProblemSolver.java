@@ -23,16 +23,8 @@ public abstract class ProblemSolver {
 	}
 
 	protected Integer[] getFirstXNaturals(final int x) {
-		return getFirstNumbersVerifyingCondition(0, incrementBy(1), lessThan(x));
-	}
-
-	private Condition lessThan(final int x) {
-		return new Condition() {
-			@Override
-			public boolean verifiedBy(int number) {
-				return number < x;
-			}
-		};
+		return getFirstNumbersVerifyingCondition(0, incrementBy(1),
+				Condition.lessThan(x));
 	}
 
 	private Incrementor incrementBy(final int increment) {
@@ -47,7 +39,7 @@ public abstract class ProblemSolver {
 
 	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
 		return getFirstNumbersVerifyingCondition(1, sumLastTwoValuesOr(1),
-				lessThan(topValue));
+				Condition.lessThan(topValue));
 	}
 
 	private Incrementor sumLastTwoValuesOr(final int defaultValue) {

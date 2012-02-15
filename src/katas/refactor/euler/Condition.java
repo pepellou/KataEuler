@@ -1,7 +1,16 @@
 package katas.refactor.euler;
 
-public interface Condition {
+public abstract class Condition {
 
-	public boolean verifiedBy(int number);
-	
+	public abstract boolean verifiedBy(int number);
+
+	public static Condition lessThan(final int x) {
+		return new Condition() {
+			@Override
+			public boolean verifiedBy(int number) {
+				return number < x;
+			}
+		};
+	}
+
 }
