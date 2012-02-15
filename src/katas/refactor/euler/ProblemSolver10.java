@@ -1,5 +1,7 @@
 package katas.refactor.euler;
 
+import java.util.Vector;
+
 public class ProblemSolver10 extends ProblemSolver {
 
 	@Override
@@ -8,23 +10,22 @@ public class ProblemSolver10 extends ProblemSolver {
 	}
 
 	private Long[] getPrimesUpTo(int topValue) {
-		Long[] primes = new Long[148932];
-		Long[] squares_of_primes = new Long[148932];
-		int num_primes = 0;
+		Vector<Long> primes = new Vector<Long>();
+		Vector<Long> squares_of_primes = new Vector<Long>();
 		for (long natural = 3; natural < topValue; natural += 2) {
 			boolean is_prime = true;
-			for (int pr = 0; pr < num_primes && is_prime
-					&& squares_of_primes[pr] <= natural; pr++) {
-				long divisor = primes[pr];
+			for (int pr = 0; pr < primes.size() && is_prime
+					&& squares_of_primes.get(pr) <= natural; pr++) {
+				long divisor = primes.get(pr);
 				if (natural % divisor == 0)
 					is_prime = false;
 			}
 			if (is_prime) {
-				primes[num_primes] = natural;
-				squares_of_primes[num_primes++] = natural * natural;
+				primes.add(natural);
+				squares_of_primes.add(natural * natural);
 			}
 		}
-		return primes;
+		return primes.toArray(new Long[0]);
 	}
 
 	@Override
