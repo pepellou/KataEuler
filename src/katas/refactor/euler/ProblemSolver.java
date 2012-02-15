@@ -10,13 +10,22 @@ public abstract class ProblemSolver {
 
 	public abstract String descriptionOfProblem();
 
-	protected int sumValuesVerifyingCondition(int[] values, Condition conditionToVerify) {
+	protected int sumValuesVerifyingCondition(int[] values,
+			Condition conditionToVerify) {
 		int sum = 0;
 		for (int value : values) {
 			if (conditionToVerify.verifiedBy(value))
 				sum += value;
 		}
 		return sum;
+	}
+
+	protected int[] firstXNaturals(int x) {
+		int naturals[] = new int[x];
+		for (int natural = 0; natural < x; natural++) {
+			naturals[natural] = natural;
+		}
+		return naturals;
 	}
 
 }

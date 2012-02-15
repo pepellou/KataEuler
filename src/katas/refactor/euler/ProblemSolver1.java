@@ -9,14 +9,6 @@ public class ProblemSolver1 extends ProblemSolver {
 						isMultipleOf3And5());
 	}
 
-	private int[] firstXNaturals(int x) {
-		int naturals[] = new int[x];
-		for (int natural = 0; natural < x; natural++) {
-			naturals[natural] = natural;
-		}
-		return naturals;
-	}
-
 	private Condition isMultipleOf3And5() {
 		return new Condition() {
 			@Override
