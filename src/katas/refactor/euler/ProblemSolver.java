@@ -4,10 +4,6 @@ import java.util.Vector;
 
 public abstract class ProblemSolver {
 
-	protected boolean multipleOf(long natural, long divisor) {
-		return natural % divisor == 0;
-	}
-
 	public abstract String solve();
 
 	public abstract String descriptionOfProblem();
@@ -24,12 +20,12 @@ public abstract class ProblemSolver {
 
 	protected Integer[] getFirstNumbersVerifyingCondition(int firstValue,
 			Incrementor incrementor, Condition condition) {
-		Vector<Integer> naturals = new Vector<Integer>();
-		for (int natural = firstValue; condition.verifiedBy(natural); natural = incrementor
-				.increment(natural, naturals)) {
-			naturals.add(natural);
+		Vector<Integer> numbers = new Vector<Integer>();
+		for (int number = firstValue; condition.verifiedBy(number); number = incrementor
+				.increment(number, numbers)) {
+			numbers.add(number);
 		}
-		return naturals.toArray(new Integer[0]);
+		return numbers.toArray(new Integer[0]);
 	}
 
 }

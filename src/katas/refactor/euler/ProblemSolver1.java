@@ -6,16 +6,7 @@ public class ProblemSolver1 extends ProblemSolver {
 	public String solve() {
 		return ""
 				+ sumValuesVerifyingCondition(getFirstXNaturals(1000),
-						isMultipleOf3And5());
-	}
-
-	private Condition isMultipleOf3And5() {
-		return new Condition() {
-			@Override
-			public boolean verifiedBy(int number) {
-				return multipleOf(number, 3) || multipleOf(number, 5);
-			}
-		};
+						Condition.isMultipleOf3And5());
 	}
 
 	@Override

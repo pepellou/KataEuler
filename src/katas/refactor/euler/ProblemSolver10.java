@@ -13,7 +13,7 @@ public class ProblemSolver10 extends ProblemSolver {
 			for (int pr = 0; pr < num_primes && is_prime
 					&& squares_of_primes[pr] <= natural; pr++) {
 				long divisor = primes[pr];
-				if (multipleOf(natural, divisor))
+				if (Condition.multipleOf(natural, divisor))
 					is_prime = false;
 			}
 			if (is_prime) {

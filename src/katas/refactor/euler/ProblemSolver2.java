@@ -6,12 +6,7 @@ public class ProblemSolver2 extends ProblemSolver {
 	public String solve() {
 		return ""
 				+ sumValuesVerifyingCondition(getFibonacciNumbersUpTo(4000000),
-						new Condition() {
-							@Override
-							public boolean verifiedBy(int number) {
-								return multipleOf(number, 2);
-							}
-						});
+						Condition.isMultipleOf2());
 	}
 
 	@Override
