@@ -1,5 +1,7 @@
 package katas.refactor.euler;
 
+import java.util.Vector;
+
 public abstract class ProblemSolver {
 
 	protected boolean multipleOf(long natural, long divisor) {
@@ -10,7 +12,7 @@ public abstract class ProblemSolver {
 
 	public abstract String descriptionOfProblem();
 
-	protected int sumValuesVerifyingCondition(int[] values,
+	protected int sumValuesVerifyingCondition(Integer[] values,
 			Condition conditionToVerify) {
 		int sum = 0;
 		for (int value : values) {
@@ -20,25 +22,55 @@ public abstract class ProblemSolver {
 		return sum;
 	}
 
-	protected int[] firstXNaturals(int x) {
-		int naturals[] = new int[x];
-		for (int natural = 0; natural < x; natural++) {
-			naturals[natural] = natural;
-		}
-		return naturals;
+	protected Integer[] firstXNaturals(final int x) {
+		Condition condition = new Condition() {
+			@Override
+			public boolean verifiedBy(int number) {
+				return number < x;
+			}
+		};
+		int firstValue = 0;
+		Incrementor incrementor = new Incrementor() {
+			@Override
+			public int increment(int current_value,
+					Vector<Integer> previous_values) {
+				return current_value + 1;
+			}
+		};
+
+		return firstNumbersMatchingCondition(firstValue, incrementor, condition);
 	}
 
-	protected int[] firstXFibonaccis(int x) {
-		int[] fibonacci = new int[x];
-		fibonacci[0] = 1;
-		fibonacci[1] = 1;
-		int current = 2;
-		while (current < x) {
-			fibonacci[current] = fibonacci[current - 1]
-					+ fibonacci[current - 2];
-			current++;
+	private Integer[] firstNumbersMatchingCondition(int firstValue,
+			Incrementor incrementor, Condition condition) {
+		Vector<Integer> naturals = new Vector<Integer>();
+		for (int natural = firstValue; condition.verifiedBy(natural); natural = incrementor
+				.increment(natural, naturals)) {
+			naturals.add(natural);
 		}
-		return fibonacci;
+		return naturals.toArray(new Integer[0]);
+	}
+
+	protected Integer[] fibonaccisUpTo(final int topValue) {
+		int firstValue = 1;
+		Incrementor incrementor = new Incrementor() {
+			@Override
+			public int increment(int current_value,
+					Vector<Integer> previous_values) {
+				int size = previous_values.size();
+				return (size == 1) ? 1 : previous_values.get(size - 1)
+						+ previous_values.get(size - 2);
+
+			}
+		};
+		Condition condition = new Condition() {
+			@Override
+			public boolean verifiedBy(int number) {
+				return number <= topValue;
+			}
+		};
+
+		return firstNumbersMatchingCondition(firstValue, incrementor, condition);
 	}
 
 }

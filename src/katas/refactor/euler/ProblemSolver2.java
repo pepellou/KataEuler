@@ -14,10 +14,6 @@ public class ProblemSolver2 extends ProblemSolver {
 						});
 	}
 
-	private int[] fibonaccisUpTo(int topValue) {
-		return firstXFibonaccis(34);
-	}
-
 	@Override
 	public String descriptionOfProblem() {
 		return "By considering the terms in the Fibonacci sequence "
