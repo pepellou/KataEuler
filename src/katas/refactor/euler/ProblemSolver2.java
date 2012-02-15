@@ -4,17 +4,31 @@ public class ProblemSolver2 extends ProblemSolver {
 
 	@Override
 	public String solve() {
-		int current_fibonnaci = 1;
-		int next_fibonnaci = 1;
-		int sum = 0;
-		while (next_fibonnaci <= 4000000) {
-			if (multipleOf(next_fibonnaci, 2))
-				sum += next_fibonnaci;
-			int temp = next_fibonnaci;
-			next_fibonnaci = current_fibonnaci + next_fibonnaci;
-			current_fibonnaci = temp;
+		int topValue = 4000000;
+		int[] fibonacci = fibonacciUpTo(topValue);
+		return "" + sumValuesVerifyingCondition(fibonacci, new Condition() {
+			@Override
+			public boolean verifiedBy(int number) {
+				return multipleOf(number, 2);
+			}
+		});
+	}
+
+	private int[] fibonacciUpTo(int topValue) {
+		return firstXFibonacci(34);
+	}
+
+	private int[] firstXFibonacci(int x) {
+		int[] fibonacci = new int[x];
+		fibonacci[0] = 1;
+		fibonacci[1] = 1;
+		int current = 2;
+		while (current < x) {
+			fibonacci[current] = fibonacci[current - 1]
+					+ fibonacci[current - 2];
+			current++;
 		}
-		return "" + sum;
+		return fibonacci;
 	}
 
 	@Override
