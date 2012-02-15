@@ -17,17 +17,17 @@ public class EulerTest {
 
 	@Test
 	public void solvesProblem1() throws Exception {
-		assertEquals("233168", euler.problem1());
+		assertEquals("233168", euler.solveProblem(1));
 	}
 
 	@Test
 	public void solvesProblem2() throws Exception {
-		assertEquals("4613732", euler.problem2());
+		assertEquals("4613732", euler.solveProblem(2));
 	}
 
 	@Test
 	public void solvesProblem10() throws Exception {
-		assertEquals("142913828922", euler.problem10());
+		assertEquals("142913828922", euler.solveProblem(10));
 	}
 
 }

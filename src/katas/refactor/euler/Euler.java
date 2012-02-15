@@ -2,7 +2,7 @@ package katas.refactor.euler;
 
 public class Euler {
 
-	private String solveProblem(int numProblem) {
+	public String solveProblem(int numProblem) {
 		try {
 			return ((Problem) Class.forName(
 					"katas.refactor.euler.Problem" + numProblem).newInstance())
@@ -15,18 +15,6 @@ public class Euler {
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	public String problem1() {
-		return solveProblem(1);
-	}
-
-	public String problem2() {
-		return solveProblem(2);
-	}
-
-	public String problem10() {
-		return solveProblem(10);
 	}
 
 }
