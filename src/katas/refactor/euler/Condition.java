@@ -18,16 +18,22 @@ public abstract class Condition {
 	}
 
 	public static Condition isMultipleOf3And5() {
-		return new Condition() {
-			@Override
-			public boolean verifiedBy(int number) {
-				return multipleOf(number, 3) || multipleOf(number, 5);
-			}
-		};
+		return or(isMultipleOf(3), isMultipleOf(5));
 	}
 
 	public static Condition isMultipleOf2() {
 		return isMultipleOf(2);
+	}
+
+	public static Condition or(final Condition condition1,
+			final Condition condition2) {
+		return new Condition() {
+			@Override
+			public boolean verifiedBy(int number) {
+				return condition1.verifiedBy(number)
+						|| condition2.verifiedBy(number);
+			}
+		};
 	}
 
 	public static Condition isMultipleOf(final int divisor) {
