@@ -23,36 +23,13 @@ public abstract class ProblemSolver {
 	}
 
 	protected Integer[] getFirstXNaturals(final int x) {
-		return getFirstNumbersVerifyingCondition(0, incrementBy(1),
+		return getFirstNumbersVerifyingCondition(0, Incrementor.incrementBy(1),
 				Condition.lessThan(x));
 	}
 
-	private Incrementor incrementBy(final int increment) {
-		return new Incrementor() {
-			@Override
-			public int increment(int current_value,
-					Vector<Integer> previous_values) {
-				return current_value + increment;
-			}
-		};
-	}
-
 	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
-		return getFirstNumbersVerifyingCondition(1, sumLastTwoValuesOr(1),
-				Condition.lessThan(topValue));
-	}
-
-	private Incrementor sumLastTwoValuesOr(final int defaultValue) {
-		return new Incrementor() {
-			@Override
-			public int increment(int current_value,
-					Vector<Integer> previous_values) {
-				int size = previous_values.size();
-				return (size == 1) ? defaultValue : previous_values
-						.get(size - 1) + previous_values.get(size - 2);
-
-			}
-		};
+		return getFirstNumbersVerifyingCondition(1,
+				Incrementor.sumLastTwoValuesOr(1), Condition.lessThan(topValue));
 	}
 
 	private Integer[] getFirstNumbersVerifyingCondition(int firstValue,
