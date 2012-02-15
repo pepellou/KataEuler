@@ -8,8 +8,6 @@ public abstract class ProblemSolver {
 
 	public abstract String solve();
 
-	public String descriptionOfProblem() {
-		return null;
-	}
+	public abstract String descriptionOfProblem();
 
 }

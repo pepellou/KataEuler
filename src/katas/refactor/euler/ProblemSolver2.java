@@ -4,8 +4,6 @@ public class ProblemSolver2 extends ProblemSolver {
 
 	@Override
 	public String solve() {
-		// By considering the terms in the Fibonacci sequence whose values do
-		// not exceed four million, find the sum of the even-valued terms.
 		int current_fibonnaci = 1;
 		int next_fibonnaci = 1;
 		int sum = 0;
@@ -17,6 +15,13 @@ public class ProblemSolver2 extends ProblemSolver {
 			current_fibonnaci = temp;
 		}
 		return "" + sum;
+	}
+
+	@Override
+	public String descriptionOfProblem() {
+		return "By considering the terms in the Fibonacci sequence "
+				+ "whose values do not exceed four million, "
+				+ "find the sum of the even-valued terms.";
 	}
 
 }

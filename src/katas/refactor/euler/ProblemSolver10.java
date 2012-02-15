@@ -4,7 +4,6 @@ public class ProblemSolver10 extends ProblemSolver {
 
 	@Override
 	public String solve() {
-		// Find the sum of all the primes below two million
 		long[] primes = new long[148932];
 		long[] squares_of_primes = new long[148932];
 		int num_primes = 0;
@@ -24,6 +23,11 @@ public class ProblemSolver10 extends ProblemSolver {
 			}
 		}
 		return "" + sum;
+	}
+
+	@Override
+	public String descriptionOfProblem() {
+		return "Find the sum of all the primes below two million.";
 	}
 
 }
