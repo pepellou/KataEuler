@@ -4,10 +4,14 @@ public class ProblemSolver10 extends ProblemSolver {
 
 	@Override
 	public String solve() {
+		return "" + (sumValues(getPrimesUpTo(2000000), Condition.truth()) + 2);
+	}
+
+	private Long[] getPrimesUpTo(int topValue) {
 		Long[] primes = new Long[148932];
 		Long[] squares_of_primes = new Long[148932];
 		int num_primes = 0;
-		for (long natural = 3; natural < 2000000; natural += 2) {
+		for (long natural = 3; natural < topValue; natural += 2) {
 			boolean is_prime = true;
 			for (int pr = 0; pr < num_primes && is_prime
 					&& squares_of_primes[pr] <= natural; pr++) {
@@ -20,7 +24,7 @@ public class ProblemSolver10 extends ProblemSolver {
 				squares_of_primes[num_primes++] = natural * natural;
 			}
 		}
-		return "" + (sumValues(primes, Condition.truth()) + 2);
+		return primes;
 	}
 
 	@Override
