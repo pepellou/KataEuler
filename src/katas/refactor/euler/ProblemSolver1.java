@@ -8,22 +8,20 @@ public class ProblemSolver1 extends ProblemSolver {
 		for (int natural = 0; natural < 1000; natural++) {
 			naturals[natural] = natural;
 		}
-		Condition conditionToVerify = new Condition() {
+		return "" + sumValuesVerifyingCondition(naturals, new Condition() {
 			@Override
 			public boolean verifiedBy(int number) {
 				return multipleOf(number, 3) || multipleOf(number, 5);
 			}
-		};
-		int sum = sumValuesVerifyingCondition(naturals, conditionToVerify);
-		return "" + sum;
+		});
 	}
 
 	private int sumValuesVerifyingCondition(int[] values,
 			Condition conditionToVerify) {
 		int sum = 0;
-		for (int natural : values) {
-			if (conditionToVerify.verifiedBy(natural))
-				sum += natural;
+		for (int value : values) {
+			if (conditionToVerify.verifiedBy(value))
+				sum += value;
 		}
 		return sum;
 	}
