@@ -23,7 +23,7 @@ public abstract class ProblemSolver {
 	}
 
 	protected Integer[] getFirstXNaturals(final int x) {
-		return getFirstNumbersMatchingCondition(0, incrementBy(1), lessThan(x));
+		return getFirstNumbersVerifyingCondition(0, incrementBy(1), lessThan(x));
 	}
 
 	private Condition lessThan(final int x) {
@@ -46,7 +46,7 @@ public abstract class ProblemSolver {
 	}
 
 	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
-		return getFirstNumbersMatchingCondition(1, sumLastTwoValuesOr(1),
+		return getFirstNumbersVerifyingCondition(1, sumLastTwoValuesOr(1),
 				lessThan(topValue));
 	}
 
@@ -63,7 +63,7 @@ public abstract class ProblemSolver {
 		};
 	}
 
-	private Integer[] getFirstNumbersMatchingCondition(int firstValue,
+	private Integer[] getFirstNumbersVerifyingCondition(int firstValue,
 			Incrementor incrementor, Condition condition) {
 		Vector<Integer> naturals = new Vector<Integer>();
 		for (int natural = firstValue; condition.verifiedBy(natural); natural = incrementor
