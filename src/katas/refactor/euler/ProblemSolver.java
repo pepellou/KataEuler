@@ -28,4 +28,17 @@ public abstract class ProblemSolver {
 		return naturals;
 	}
 
+	protected int[] firstXFibonaccis(int x) {
+		int[] fibonacci = new int[x];
+		fibonacci[0] = 1;
+		fibonacci[1] = 1;
+		int current = 2;
+		while (current < x) {
+			fibonacci[current] = fibonacci[current - 1]
+					+ fibonacci[current - 2];
+			current++;
+		}
+		return fibonacci;
+	}
+
 }
