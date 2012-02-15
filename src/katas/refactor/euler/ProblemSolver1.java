@@ -12,6 +12,7 @@ public class ProblemSolver1 extends ProblemSolver {
 		return "" + sum;
 	}
 
+	@Override
 	public String descriptionOfProblem() {
 		return "Add all the natural numbers below one thousand that are multiples of 3 or 5.";
 	}
