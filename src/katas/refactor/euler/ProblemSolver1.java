@@ -6,7 +6,7 @@ public class ProblemSolver1 extends ProblemSolver {
 	public String solve() {
 		return ""
 				+ sumValuesVerifyingCondition(getFirstXNaturals(1000),
-						Condition.isMultipleOf3And5());
+						Condition.isMultipleOf3Or5());
 	}
 
 	@Override

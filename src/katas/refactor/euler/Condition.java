@@ -17,7 +17,7 @@ public abstract class Condition {
 		};
 	}
 
-	public static Condition isMultipleOf3And5() {
+	public static Condition isMultipleOf3Or5() {
 		return or(isMultipleOf(3), isMultipleOf(5));
 	}
 
