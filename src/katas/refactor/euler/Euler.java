@@ -4,8 +4,8 @@ public class Euler {
 
 	public String solveProblem(int numProblem) {
 		try {
-			return ((Problem) Class.forName(
-					"katas.refactor.euler.Problem" + numProblem).newInstance())
+			return ((ProblemSolver) Class.forName(
+					"katas.refactor.euler.ProblemSolver" + numProblem).newInstance())
 					.solve();
 		} catch (InstantiationException e) {
 			e.printStackTrace();

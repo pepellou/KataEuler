@@ -1,6 +1,6 @@
 package katas.refactor.euler;
 
-public abstract class Problem {
+public abstract class ProblemSolver {
 
 	protected boolean multipleOf(long natural, long divisor) {
 		return natural % divisor == 0;

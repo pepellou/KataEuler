@@ -1,6 +1,6 @@
 package katas.refactor.euler;
 
-public class Problem10 extends Problem {
+public class ProblemSolver10 extends ProblemSolver {
 
 	@Override
 	public String solve() {
