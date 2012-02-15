@@ -4,14 +4,14 @@ public class ProblemSolver2 extends ProblemSolver {
 
 	@Override
 	public String solve() {
-		int topValue = 4000000;
-		int[] fibonacci = fibonaccisUpTo(topValue);
-		return "" + sumValuesVerifyingCondition(fibonacci, new Condition() {
-			@Override
-			public boolean verifiedBy(int number) {
-				return multipleOf(number, 2);
-			}
-		});
+		return ""
+				+ sumValuesVerifyingCondition(fibonaccisUpTo(4000000),
+						new Condition() {
+							@Override
+							public boolean verifiedBy(int number) {
+								return multipleOf(number, 2);
+							}
+						});
 	}
 
 	private int[] fibonaccisUpTo(int topValue) {
