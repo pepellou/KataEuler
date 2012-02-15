@@ -22,8 +22,8 @@ public abstract class ProblemSolver {
 		return sum;
 	}
 
-	protected Integer[] firstXNaturals(final int x) {
-		return firstNumbersMatchingCondition(0, new Incrementor() {
+	protected Integer[] getFirstXNaturals(final int x) {
+		return getFirstNumbersMatchingCondition(0, new Incrementor() {
 			@Override
 			public int increment(int current_value,
 					Vector<Integer> previous_values) {
@@ -37,7 +37,7 @@ public abstract class ProblemSolver {
 		});
 	}
 
-	private Integer[] firstNumbersMatchingCondition(int firstValue,
+	private Integer[] getFirstNumbersMatchingCondition(int firstValue,
 			Incrementor incrementor, Condition condition) {
 		Vector<Integer> naturals = new Vector<Integer>();
 		for (int natural = firstValue; condition.verifiedBy(natural); natural = incrementor
@@ -47,8 +47,8 @@ public abstract class ProblemSolver {
 		return naturals.toArray(new Integer[0]);
 	}
 
-	protected Integer[] fibonaccisUpTo(final int topValue) {
-		return firstNumbersMatchingCondition(1, new Incrementor() {
+	protected Integer[] getFibonacciNumbersUpTo(final int topValue) {
+		return getFirstNumbersMatchingCondition(1, new Incrementor() {
 			@Override
 			public int increment(int current_value,
 					Vector<Integer> previous_values) {

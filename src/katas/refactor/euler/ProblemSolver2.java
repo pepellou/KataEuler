@@ -5,7 +5,7 @@ public class ProblemSolver2 extends ProblemSolver {
 	@Override
 	public String solve() {
 		return ""
-				+ sumValuesVerifyingCondition(fibonaccisUpTo(4000000),
+				+ sumValuesVerifyingCondition(getFibonacciNumbersUpTo(4000000),
 						new Condition() {
 							@Override
 							public boolean verifiedBy(int number) {
