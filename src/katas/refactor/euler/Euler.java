@@ -3,24 +3,20 @@ package katas.refactor.euler;
 public class Euler {
 
 	public String solveProblem(int numProblem) {
-		try {
-			return getSolverForProblem(numProblem).solve();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		return null;
+		ProblemSolver solver = getSolverForProblem(numProblem);
+		if (solver == null)
+			return null;
+		return solver.solve();
 	}
 
-	private ProblemSolver getSolverForProblem(int numProblem)
-			throws InstantiationException, IllegalAccessException,
-			ClassNotFoundException {
-		return ((ProblemSolver) Class.forName(
-				"katas.refactor.euler.ProblemSolver" + numProblem)
-				.newInstance());
+	private ProblemSolver getSolverForProblem(int numProblem) {
+		try {
+			return ((ProblemSolver) Class.forName(
+					"katas.refactor.euler.ProblemSolver" + numProblem)
+					.newInstance());
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 }
