@@ -10,11 +10,14 @@ public class ProblemSolver10 extends ProblemSolver {
 	}
 
 	private Long[] getPrimesUpTo(int topValue) {
+		Condition condition = Condition.lessThan(topValue);
+		Incrementor incrementor = Incrementor.incrementBy(2);
 		Vector<Long> primes = new Vector<Long>();
 		Vector<Long> squares_of_primes = new Vector<Long>();
 		primes.add(2l);
 		squares_of_primes.add(4l);
-		for (long natural = 3; natural < topValue; natural += 2) {
+		for (long natural = 3; condition.verifiedBy(natural); incrementor
+				.increment(natural, primes)) {
 			boolean is_prime = true;
 			for (int pr = 0; pr < primes.size() && is_prime
 					&& squares_of_primes.get(pr) <= natural; pr++) {
