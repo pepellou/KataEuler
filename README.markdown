@@ -9,7 +9,7 @@ La intención de esta kata no es enfocar el debate a ninguna cuestión en concre
 Descripción de la Kata
 ----------------------
 
-Por cuestiones en las que no vamos a profundizar, hemos recibido un golpe de iluminación vital y hemos decidido que debemos resolver todos los problemas de Project Euler (http://projecteuler.net/) para estar en paz con nosotros mismos. Como sabemos que es un camino largo, empezamos por resolver algunos de los más sencillos, concretamente los problemas 1, 2 y 10 (véase tag start-kata-here).
+Por cuestiones en las que no vamos a profundizar, hemos recibido un golpe de iluminación vital y hemos decidido que debemos resolver todos los problemas de Project Euler (http://projecteuler.net/) para estar en paz con nosotros mismos. Como sabemos que es un camino largo, empezamos por resolver algunos de los más sencillos, concretamente los problemas 1, 2 y 10 (véase tag [start-kata-here](https://github.com/pepellou/KataEuler/tree/start-kata-here)).
 
 Es en este punto donde se nos plantea una nueva duda metafísica: ¿vamos por el buen camino? ¡Pues claro que no! Acabamos de resolver apenas 3 problemas y ya nos cuesta entender nuestro propio código. 
 Si queremos resolver cientos de problemas necesitaremos refactorizar nuestro código para:
