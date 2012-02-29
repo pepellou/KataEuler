@@ -32,7 +32,7 @@ Es importante señalar que las reglas para refactorizar van en los dos sentidos.
 
     class NumeroEntero {
 
-	private value;
+        private value;
 
         public Numero(int num) {
             this.value = num;
@@ -48,7 +48,7 @@ y
 
     class Numero {
 
-	private value;
+        private value;
 
         public Numero(int num) {
             this.value = num;
