@@ -48,7 +48,7 @@ y
 
     class Numero {
 
-        private value;
+        protected value;
 
         public Numero(int num) {
             this.value = num;
