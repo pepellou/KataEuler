@@ -176,7 +176,7 @@ Con:
         return pattern.length() != guess.length();
     }
 
-Aunque el código resultante es más extenso, las responsabilidades están divididas y por tanto es más mantenible y legible.
+Aunque el segundo código es más extenso, las responsabilidades están divididas y por tanto es más mantenible y legible.
 Lo que no podemos evitar es la _verbosity_ del lenguaje. Cosas como:
 
         for (int pos = 0; pos < pattern.length(); pos++) {
