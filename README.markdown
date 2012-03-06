@@ -189,3 +189,9 @@ en otros lenguajes se pueden hacer generando un código más simple y legible; p
         pattern.each_char { |pattChar|
             ...
         }
+
+
+Refactoring Dojo en la ESEI de Ourense
+--------------------------------------
+
+A fecha de 2 de Marzo de 2012 celebramos un Refactoring Dojo en la ESEI de Ourense, con la participación de diversos alumnos y profesores de la Escuela, en el que se ha practicado esta kata en un formato Randori. Debido al interés de los asistentes, hemos colgado el resultado de dicho dojo en una rama nueva de este proyecto: [esei-uvigo](https://github.com/pepellou/KataEuler/tree/esei-uvigo).
